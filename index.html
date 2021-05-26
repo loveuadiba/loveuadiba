@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>I Luv u Adiba</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 	<style type="text/css">
 		body {
   background-color: #373438;
@@ -73,6 +74,17 @@ const changeColor = () => {
 }
 
 setInterval(changeColor, 500);
+
+function scroll(speed) {
+    $('html, body').animate({ scrollTop: $(document).height() - $(window).height() }, speed, function() {
+        $(this).animate({ scrollTop: 0 }, speed);
+    });
+}
+
+speed = 2000;
+
+scroll(speed)
+setInterval(function(){scroll(speed)}, speed * 2);
 </script>
 </body>
 </html>
