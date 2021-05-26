@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body {
+  background-color: #373438;
+}
+
+.lovestyle {
+  font-size: 20vh;
+  text-align: center;
+  padding-top: 1vh;
+}
+
+
+span {
+  -webkit-transition-property: color, text;
+  -webkit-transition-duration: 0.45s;
+  -webkit-transition-timing-function: linear, ease-in;
+
+  -moz-transition-property: color, text;
+  -moz-transition-duration: 0.45s;
+  -moz-transition-timing-function: linear, ease-in;
+
+  -o-transition-property: color, text;
+  -o-transition-duration: 0.45s;
+  -o-transition-timing-function: linear, ease-in;
+}
+
+	</style>
+</head>
+<body>
+<div id="love" class="lovestyle">
+  ♥ ♥ ♥
+</div>
+<div id="love1" class="lovestyle">
+  I love you
+</div>
+<div id="love2" class="lovestyle">
+  Adiba!
+</div>
+<div id="love3" class="lovestyle">
+  ♥ ♥ ♥
+</div>
+<script type="text/javascript">
+	const generateHexString = length => {
+  let hex = '0123456789abcdef';
+  let string = '';
+  while(length--) {
+    string += hex[Math.floor(Math.random() * hex.length)];  
+  }
+  return string;
+}
+
+let love = document.getElementById('love');
+love.innerHTML = love.innerHTML.split('').map(letter => `<span style="color:#${generateHexString(6)}" class="loveLetter">${letter}</span>`).join('');
+
+let love1 = document.getElementById('love1');
+love1.innerHTML = love1.innerHTML.split('').map(letter => `<span style="color:#${generateHexString(6)}" class="loveLetter">${letter}</span>`).join('');
+
+let love2 = document.getElementById('love2');
+love2.innerHTML = love2.innerHTML.split('').map(letter => `<span style="color:#${generateHexString(6)}" class="loveLetter">${letter}</span>`).join('');
+
+let love3 = document.getElementById('love3');
+love3.innerHTML = love3.innerHTML.split('').map(letter => `<span style="color:#${generateHexString(6)}" class="loveLetter">${letter}</span>`).join('');
+
+const changeColor = () => {
+  let letters = document.getElementsByClassName('loveLetter');
+  for(let i = 0; i < letters.length; i++) {
+    letters[i].style.color = '#' + generateHexString(6);
+  };
+}
+
+setInterval(changeColor, 500);
+</script>
+</body>
+</html>
