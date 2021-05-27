@@ -11,7 +11,7 @@
 
 .lovestyle {
   font-family: 'Monoton', cursive;
-  font-size: 20vw;
+  font-size: 15vw;
   text-align: center;
   padding-top: 1vh;
 }
@@ -35,9 +35,11 @@ span {
 </head>
 <body>
 <div id="love" class="lovestyle">♡</div>
-<div id="love1" class="lovestyle">I love you</div>
-<div id="love2" class="lovestyle">Adiba!</div>
-<div id="love3" class="lovestyle">♡</div>
+<div id="love1" class="lovestyle">I</div>
+<div id="love2" class="lovestyle">love</div>
+<div id="love3" class="lovestyle">you</div>
+<div id="love4" class="lovestyle">Adiba!</div>
+<div id="love5" class="lovestyle">♡</div>
 <script type="text/javascript">
 	const generateHexString = length => {
   let hex = '0123456789abcdef';
@@ -60,6 +62,12 @@ love2.innerHTML = love2.innerHTML.split('').map(letter => `<span style="color:#$
 let love3 = document.getElementById('love3');
 love3.innerHTML = love3.innerHTML.split('').map(letter => `<span style="color:#${generateHexString(6)}" class="loveLetter">${letter}</span>`).join('');
 
+let love4 = document.getElementById('love4');
+love4.innerHTML = love4.innerHTML.split('').map(letter => `<span style="color:#${generateHexString(6)}" class="loveLetter">${letter}</span>`).join('');
+
+let love5 = document.getElementById('love5');
+love5.innerHTML = love5.innerHTML.split('').map(letter => `<span style="color:#${generateHexString(6)}" class="loveLetter">${letter}</span>`).join('');
+
 const changeColor = () => {
   let letters = document.getElementsByClassName('loveLetter');
   for(let i = 0; i < letters.length; i++) {
@@ -75,7 +83,7 @@ function scroll(speed) {
     });
 }
 
-speed = 10000;
+speed = 5000;
 
 scroll(speed)
 setInterval(function(){scroll(speed)}, speed * 2);
